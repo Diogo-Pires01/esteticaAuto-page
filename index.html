@@ -18,34 +18,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
-    <script defer>
-      document.addEventListener("DOMContentLoaded", () => {
-        const form = document.querySelector(".contato-form form");
-        form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          fetch(form.action, {
-            method: "POST",
-            body: new FormData(form),
-            headers: { Accept: "application/json" },
-          }).then((res) => {
-            Toastify({
-              text: res.ok
-                ? "Mensagem enviada com sucesso!"
-                : "Erro ao enviar. Tente novamente.",
-              duration: 3000,
-              gravity: "top",
-              position: "right",
-              style: {
-                background: res.ok ? "#2ecc71" : "#c0392b",
-                fontFamily: "'Montserrat', sans-serif",
-                fontSize: "0.85rem",
-              },
-            }).showToast();
-            if (res.ok) form.reset();
-          });
-        });
-      });
-    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script defer src="main.js"></script>
   </head>
   <body>
     <header class="header">
@@ -88,15 +62,15 @@
           </p>
           <div class="sobre-stats">
             <div class="stat">
-              <strong>500+</strong>
+              <strong data-target="500" data-suffix="+">0</strong>
               <span>Carros atendidos</span>
             </div>
             <div class="stat">
-              <strong>10+</strong>
+              <strong data-target="10" data-suffix="+">0</strong>
               <span>Anos de experiência</span>
             </div>
             <div class="stat">
-              <strong>100%</strong>
+              <strong data-target="100" data-suffix="%">0</strong>
               <span>Satisfação</span>
             </div>
           </div>
@@ -220,6 +194,5 @@
     >
       <i class="ph-light ph-whatsapp-logo"></i>
     </a>
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   </body>
 </html>
