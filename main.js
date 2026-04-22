@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Header scroll
+  const header = document.querySelector(".header");
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 50);
+  });
+
   // Formulário de contato
   const form = document.querySelector(".contato-form form");
   form.addEventListener("submit", (e) => {
