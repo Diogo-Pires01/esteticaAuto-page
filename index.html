@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Retoque de Mestre | Estética Automotiva</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap"
       rel="stylesheet"
@@ -14,6 +14,38 @@
       rel="stylesheet"
       href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script defer>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector(".contato-form form");
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" },
+          }).then((res) => {
+            Toastify({
+              text: res.ok
+                ? "Mensagem enviada com sucesso!"
+                : "Erro ao enviar. Tente novamente.",
+              duration: 3000,
+              gravity: "top",
+              position: "right",
+              style: {
+                background: res.ok ? "#2ecc71" : "#c0392b",
+                fontFamily: "'Montserrat', sans-serif",
+                fontSize: "0.85rem",
+              },
+            }).showToast();
+            if (res.ok) form.reset();
+          });
+        });
+      });
+    </script>
   </head>
   <body>
     <header class="header">
@@ -68,8 +100,8 @@
               <span>Satisfação</span>
             </div>
           </div>
-          <a href="https://wa.me/5500000000000" target="_blank" class="cta-btn"
-            >Fale Conosco</a
+          <a href="https://wa.me/5521969656415" target="_blank" class="cta-btn"
+            >Fale no WhatsApp</a
           >
         </div>
       </div>
@@ -121,9 +153,7 @@
             <h3>Vitrificação</h3>
           </div>
         </div>
-        <a href="https://wa.me/5500000000000" target="_blank" class="cta-btn"
-          >Solicite seu Orçamento</a
-        >
+        <a href="#contato" class="cta-btn">Solicite seu Orçamento</a>
       </div>
     </section>
 
@@ -156,11 +186,26 @@
           </ul>
         </div>
         <div class="contato-form">
-          <form>
-            <input type="text" placeholder="Nome" required />
-            <input type="email" placeholder="E-mail" required />
-            <input type="tel" placeholder="WhatsApp" required />
-            <textarea placeholder="Mensagem" rows="4" required></textarea>
+          <form action="https://formspree.io/f/mqewyojl" method="POST">
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nova mensagem - Retoque de Mestre"
+            />
+            <input type="text" name="Nome:" placeholder="Nome" required />
+            <input type="email" name="E-mail:" placeholder="E-mail" required />
+            <input
+              type="tel"
+              name="WhatsApp:"
+              placeholder="WhatsApp"
+              required
+            />
+            <textarea
+              name="Mensagem:"
+              placeholder="Mensagem"
+              rows="4"
+              required
+            ></textarea>
             <button type="submit" class="cta-btn">Enviar</button>
           </form>
         </div>
@@ -168,12 +213,13 @@
     </section>
 
     <a
-      href="https://wa.me/5500000000000"
+      href="https://wa.me/5521969656415"
       target="_blank"
       class="whatsapp-float"
       aria-label="WhatsApp"
     >
       <i class="ph-light ph-whatsapp-logo"></i>
     </a>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   </body>
 </html>
