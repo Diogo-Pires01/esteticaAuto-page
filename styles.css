@@ -1,3 +1,74 @@
+/* Preloader */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.preloader-logo {
+  font-size: 1.4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  opacity: 0;
+}
+
+.preloader-logo span {
+  color: #e31e24;
+}
+
+.preloader-car {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2.2rem;
+  height: auto;
+  transform: scaleX(-1);
+}
+
+.preloader-bar-wrapper {
+  position: relative;
+  width: 180px;
+  padding-top: 1.2rem;
+  opacity: 0;
+}
+
+.preloader-bar-track {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.preloader-bar-fill {
+  width: 0%;
+  height: 100%;
+  background: #e31e24;
+  border-radius: 2px;
+}
+
+.page-content {
+  opacity: 0;
+}
+
+.header,
+.whatsapp-float {
+  opacity: 0;
+}
+
 ::selection {
   background: #e31e24;
   color: #000;

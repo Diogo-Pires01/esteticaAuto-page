@@ -19,9 +19,21 @@
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
     <script defer src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
     <script defer src="main.js"></script>
   </head>
   <body>
+    <div id="preloader">
+      <div class="preloader-content">
+        <span class="preloader-logo">Retoque de <span>Mestre</span></span>
+        <div class="preloader-bar-wrapper">
+          <img src="assets/luxury-car.svg" alt="" class="preloader-car" />
+          <div class="preloader-bar-track">
+            <div class="preloader-bar-fill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <header class="header">
       <a href="#" class="header-logo">Retoque de <span>Mestre</span></a>
       <nav>
@@ -31,160 +43,170 @@
       </nav>
     </header>
 
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <span class="hero-badge">Estética Automotiva Premium</span>
-        <h1>Retoque de <span>Mestre</span></h1>
-        <p>
-          Seu carro merece o tratamento de um verdadeiro mestre. Polimento,
-          vitrificação, higienização e muito mais.
-        </p>
-        <a href="#contato" class="cta-btn">Agende seu horário</a>
-      </div>
-    </section>
-
-    <section id="sobre" class="sobre">
-      <div class="sobre-container">
-        <div class="sobre-text">
-          <span class="section-badge">Quem Somos</span>
-          <h2>Excelência em cada <span>detalhe</span></h2>
+    <div class="page-content">
+      <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <span class="hero-badge">Estética Automotiva Premium</span>
+          <h1>Retoque de <span>Mestre</span></h1>
           <p>
-            A <strong>Retoque de Mestre</strong> nasceu da paixão por carros e
-            pela busca incansável da perfeição. Com anos de experiência no
-            mercado de estética automotiva, transformamos cada veículo com
-            técnicas avançadas e produtos de alta performance.
+            Seu carro merece o tratamento de um verdadeiro mestre. Polimento,
+            vitrificação, higienização e muito mais.
           </p>
-          <p>
-            Nosso compromisso é entregar resultados que superam expectativas do
-            polimento técnico à vitrificação cerâmica, cada serviço é executado
-            com precisão e dedicação.
-          </p>
-          <div class="sobre-stats">
-            <div class="stat">
-              <strong data-target="500" data-suffix="+">0</strong>
-              <span>Carros atendidos</span>
-            </div>
-            <div class="stat">
-              <strong data-target="10" data-suffix="+">0</strong>
-              <span>Anos de experiência</span>
-            </div>
-            <div class="stat">
-              <strong data-target="100" data-suffix="%">0</strong>
-              <span>Satisfação</span>
-            </div>
-          </div>
-          <a href="https://wa.me/5521969656415" target="_blank" class="cta-btn"
-            >Fale no WhatsApp</a
-          >
+          <a href="#contato" class="cta-btn">Agende seu horário</a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="servicos" class="servicos">
-      <div class="servicos-container">
-        <span class="section-badge">O que fazemos</span>
-        <h2>Nossos <span>Serviços</span></h2>
-        <div class="servicos-grid">
-          <div class="servico-card">
-            <i class="ph-light ph-paint-roller"></i>
-            <h3>Pintura</h3>
-          </div>
-          <div class="servico-card">
-            <i class="ph-light ph-wrench"></i>
-            <h3>Lanternagem</h3>
-          </div>
-          <div class="servico-card">
-            <i class="ph-light ph-car"></i>
-            <h3>Estética Automotiva</h3>
-          </div>
-          <div class="servico-card">
-            <i class="ph-light ph-drop"></i>
-            <h3>Lavagem Tradicional</h3>
-          </div>
-          <div class="servico-card">
-            <i class="ph-light ph-shower"></i>
-            <h3>Lavagem Técnica</h3>
-          </div>
-          <div class="servico-card">
-            <i class="ph-light ph-sparkle"></i>
-            <h3>Polimento</h3>
-          </div>
-          <div class="servico-card">
-            <i class="ph-light ph-broom"></i>
-            <h3>Higienização</h3>
-          </div>
-          <div class="servico-card">
-            <i class="ph-light ph-lightbulb"></i>
-            <h3>Polimento de Faróis</h3>
-          </div>
-          <div class="servico-card">
-            <i class="ph-light ph-magnifying-glass"></i>
-            <h3>Polimento de Vidros</h3>
-          </div>
-          <div class="servico-card">
-            <i class="ph-light ph-shield-check"></i>
-            <h3>Vitrificação</h3>
+      <section id="sobre" class="sobre">
+        <div class="sobre-container">
+          <div class="sobre-text">
+            <span class="section-badge">Quem Somos</span>
+            <h2>Excelência em cada <span>detalhe</span></h2>
+            <p>
+              A <strong>Retoque de Mestre</strong> nasceu da paixão por carros e
+              pela busca incansável da perfeição. Com anos de experiência no
+              mercado de estética automotiva, transformamos cada veículo com
+              técnicas avançadas e produtos de alta performance.
+            </p>
+            <p>
+              Nosso compromisso é entregar resultados que superam expectativas
+              do polimento técnico à vitrificação cerâmica, cada serviço é
+              executado com precisão e dedicação.
+            </p>
+            <div class="sobre-stats">
+              <div class="stat">
+                <strong data-target="500" data-suffix="+">0</strong>
+                <span>Carros atendidos</span>
+              </div>
+              <div class="stat">
+                <strong data-target="10" data-suffix="+">0</strong>
+                <span>Anos de experiência</span>
+              </div>
+              <div class="stat">
+                <strong data-target="100" data-suffix="%">0</strong>
+                <span>Satisfação</span>
+              </div>
+            </div>
+            <a
+              href="https://wa.me/5521969656415"
+              target="_blank"
+              class="cta-btn"
+              >Fale no WhatsApp</a
+            >
           </div>
         </div>
-        <a href="#contato" class="cta-btn">Solicite seu Orçamento</a>
-      </div>
-    </section>
+      </section>
 
-    <section id="contato" class="contato">
-      <div class="contato-container">
-        <div class="contato-info">
-          <span class="section-badge">Contato</span>
-          <h2>Envie sua <span>mensagem</span></h2>
-          <ul>
-            <li>
-              <i class="ph-light ph-map-pin"></i>
-              <div>
-                <strong>Endereço</strong>
-                <p>Rua Aricuri, 1461 - Rio de Janeiro/RJ</p>
-              </div>
-            </li>
-            <li>
-              <i class="ph-light ph-instagram-logo"></i>
-              <div>
-                <strong>Instagram</strong>
-                <p>
-                  <a
-                    href="https://instagram.com/retoquedemestre"
-                    target="_blank"
-                    >@retoquedemestre</a
-                  >
-                </p>
-              </div>
-            </li>
-          </ul>
+      <section id="servicos" class="servicos">
+        <div class="servicos-container">
+          <span class="section-badge">O que fazemos</span>
+          <h2>Nossos <span>Serviços</span></h2>
+          <div class="servicos-grid">
+            <div class="servico-card">
+              <i class="ph-light ph-paint-roller"></i>
+              <h3>Pintura</h3>
+            </div>
+            <div class="servico-card">
+              <i class="ph-light ph-wrench"></i>
+              <h3>Lanternagem</h3>
+            </div>
+            <div class="servico-card">
+              <i class="ph-light ph-car"></i>
+              <h3>Estética Automotiva</h3>
+            </div>
+            <div class="servico-card">
+              <i class="ph-light ph-drop"></i>
+              <h3>Lavagem Tradicional</h3>
+            </div>
+            <div class="servico-card">
+              <i class="ph-light ph-shower"></i>
+              <h3>Lavagem Técnica</h3>
+            </div>
+            <div class="servico-card">
+              <i class="ph-light ph-sparkle"></i>
+              <h3>Polimento</h3>
+            </div>
+            <div class="servico-card">
+              <i class="ph-light ph-broom"></i>
+              <h3>Higienização</h3>
+            </div>
+            <div class="servico-card">
+              <i class="ph-light ph-lightbulb"></i>
+              <h3>Polimento de Faróis</h3>
+            </div>
+            <div class="servico-card">
+              <i class="ph-light ph-magnifying-glass"></i>
+              <h3>Polimento de Vidros</h3>
+            </div>
+            <div class="servico-card">
+              <i class="ph-light ph-shield-check"></i>
+              <h3>Vitrificação</h3>
+            </div>
+          </div>
+          <a href="#contato" class="cta-btn">Solicite seu Orçamento</a>
         </div>
-        <div class="contato-form">
-          <form action="https://formspree.io/f/mqewyojl" method="POST">
-            <input
-              type="hidden"
-              name="_subject"
-              value="Nova mensagem - Retoque de Mestre"
-            />
-            <input type="text" name="Nome:" placeholder="Nome" required />
-            <input type="email" name="E-mail:" placeholder="E-mail" required />
-            <input
-              type="tel"
-              name="WhatsApp:"
-              placeholder="WhatsApp"
-              required
-            />
-            <textarea
-              name="Mensagem:"
-              placeholder="Mensagem"
-              rows="4"
-              required
-            ></textarea>
-            <button type="submit" class="cta-btn">Enviar</button>
-          </form>
+      </section>
+
+      <section id="contato" class="contato">
+        <div class="contato-container">
+          <div class="contato-info">
+            <span class="section-badge">Contato</span>
+            <h2>Envie sua <span>mensagem</span></h2>
+            <ul>
+              <li>
+                <i class="ph-light ph-map-pin"></i>
+                <div>
+                  <strong>Endereço</strong>
+                  <p>Rua Aricuri, 1461 - Rio de Janeiro/RJ</p>
+                </div>
+              </li>
+              <li>
+                <i class="ph-light ph-instagram-logo"></i>
+                <div>
+                  <strong>Instagram</strong>
+                  <p>
+                    <a
+                      href="https://instagram.com/retoquedemestre"
+                      target="_blank"
+                      >@retoquedemestre</a
+                    >
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="contato-form">
+            <form action="https://formspree.io/f/mqewyojl" method="POST">
+              <input
+                type="hidden"
+                name="_subject"
+                value="Nova mensagem - Retoque de Mestre"
+              />
+              <input type="text" name="Nome:" placeholder="Nome" required />
+              <input
+                type="email"
+                name="E-mail:"
+                placeholder="E-mail"
+                required
+              />
+              <input
+                type="tel"
+                name="WhatsApp:"
+                placeholder="WhatsApp"
+                required
+              />
+              <textarea
+                name="Mensagem:"
+                placeholder="Mensagem"
+                rows="4"
+                required
+              ></textarea>
+              <button type="submit" class="cta-btn">Enviar</button>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <a
       href="https://wa.me/5521969656415"
