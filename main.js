@@ -1,38 +1,39 @@
 // Preloader animation
 (() => {
+  const percentEl = document.querySelector(".preloader-percent");
   const tl = anime.timeline({ easing: "easeOutCubic" });
 
   tl.add({
-    targets: ".preloader-logo",
+    targets: ".preloader-bar-wrapper",
     opacity: [0, 1],
-    translateY: [10, 0],
-    duration: 600,
+    duration: 400,
   })
+    .add({
+      targets: ".preloader-bar-fill",
+      width: ["0%", "100%"],
+      duration: 2000,
+      easing: "easeInOutQuart",
+      update: (anim) => {
+        percentEl.textContent = Math.round(anim.progress) + "%";
+      },
+    })
     .add(
       {
-        targets: ".preloader-bar-wrapper",
-        opacity: [0, 1],
-        duration: 300,
+        targets: ".car-line",
+        strokeDashoffset: [800, 0],
+        duration: 2000,
+        easing: "easeInOutQuart",
       },
-      "-=200",
+      "-=2000",
     )
     .add(
       {
-        targets: ".preloader-bar-fill",
-        width: ["0%", "100%"],
-        duration: 1400,
+        targets: ".wheel-line",
+        strokeDashoffset: [300, 0],
+        duration: 2000,
         easing: "easeInOutQuart",
       },
-      "-=100",
-    )
-    .add(
-      {
-        targets: ".preloader-car",
-        left: ["0%", "calc(100% - 2.2rem)"],
-        duration: 1400,
-        easing: "easeInOutQuart",
-      },
-      "-=1400",
+      "-=2000",
     )
     .add({
       targets: ".preloader-content",
@@ -74,7 +75,6 @@
 })();
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Header scroll
   const header = document.querySelector(".header");
   window.addEventListener("scroll", () => {
     header.classList.toggle("scrolled", window.scrollY > 50);
@@ -106,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Contagem animada dos stats
   const counters = document.querySelectorAll(
     ".sobre-stats strong[data-target]",
   );
@@ -134,7 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   observer.observe(document.querySelector(".sobre-stats"));
 
-  // Animação dos cards de serviços
   const cards = document.querySelectorAll(".servico-card");
   const cardsObserver = new IntersectionObserver(
     (entries) => {

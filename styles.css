@@ -16,37 +16,58 @@
   gap: 2rem;
 }
 
-.preloader-logo {
-  font-size: 1.4rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #fff;
-  opacity: 0;
-}
-
-.preloader-logo span {
+.preloader-percent {
+  font-size: 1.2rem;
+  font-weight: 700;
   color: #e31e24;
+  letter-spacing: 1px;
+  margin-top: 1rem;
 }
 
 .preloader-car {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 2.2rem;
+  width: 8rem;
   height: auto;
-  transform: scaleX(-1);
+  margin-bottom: 1.5rem;
+}
+
+.preloader-car .car-line {
+  stroke: #e31e24;
+  stroke-width: 1.5;
+  fill: none;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+
+.preloader-car .wheel-line {
+  stroke: #e31e24;
+  stroke-width: 1.5;
+  fill: none;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawWheel {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .preloader-bar-wrapper {
-  position: relative;
-  width: 180px;
-  padding-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   opacity: 0;
 }
 
 .preloader-bar-track {
-  width: 100%;
+  width: 180px;
   height: 2px;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 2px;
